@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:id="@+id/container"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/name_tv"
+        android:textSize="24sp"
+        android:fontFamily="@font/roboto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Jordan 13" />
+
+    <TextView
+        android:id="@+id/company_tv"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:text="Jordan" />
+
+    <TextView
+        android:id="@+id/size_tv"
+        android:textAlignment="textEnd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Size" />
+
+    <TextView
+        android:id="@+id/description_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Description" />
+
+</LinearLayout>
