@@ -10,21 +10,34 @@ class UserViewModel : ViewModel() {
     private var _user = MutableLiveData<User?>(null)
     val user: LiveData<User?> = _user
 
-    private var _successEvent = MutableLiveData(false)
-    val successEvent: LiveData<Boolean> = _successEvent
+    private var _loginSuccessEvent = MutableLiveData(false)
+    val loginSuccessEvent: LiveData<Boolean> = _loginSuccessEvent
+
+    private var _logOutSuccessEvent = MutableLiveData(false)
+    val logOutSuccessEvent: LiveData<Boolean> = _logOutSuccessEvent
 
     fun login(email: String, password: String) {
         if (email.isNotEmpty() && password.isNotEmpty()) {
             _user.value = User(email = email, password = password)
-            _successEvent.value = true
-            handleSuccessEvent()
+            _loginSuccessEvent.value = true
+            handleLoginSuccessEvent()
         } else {
             _user.value = null
-            handleSuccessEvent()
+            handleLoginSuccessEvent()
         }
     }
 
-    private fun handleSuccessEvent() {
-        _successEvent.value = false
+    fun logOut() {
+        _logOutSuccessEvent.value = true
+        handleLogOutSuccessEvent()
+        _user.value = null
+    }
+
+    private fun handleLoginSuccessEvent() {
+        _loginSuccessEvent.value = false
+    }
+
+    private fun handleLogOutSuccessEvent() {
+        _logOutSuccessEvent.value = false
     }
 }

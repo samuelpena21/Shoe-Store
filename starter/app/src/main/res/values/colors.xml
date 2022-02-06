@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="raisingBlack">#28262C</color>
+    <color name="sunGlowYellow">#FFCB47</color>
+    <color name="chineseRed">#A3320B</color>
+    <color name="aliceBlue">#E9F1F7</color>
+    <color name="airSuperiorityBlue">#7798AB</color>
 </resources>

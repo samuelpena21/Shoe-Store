@@ -34,7 +34,7 @@ class LoginFragment : Fragment() {
             viewModel.login(email = email, password = pass)
         }
 
-        viewModel.successEvent.observe(viewLifecycleOwner) { successEvent ->
+        viewModel.loginSuccessEvent.observe(viewLifecycleOwner) { successEvent ->
             if (successEvent == true) {
                 findNavController().popBackStack()
             }

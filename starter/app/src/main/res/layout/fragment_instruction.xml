@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/aliceBlue"
     tools:context=".view.InstructionFragment">
 
     <TextView
@@ -15,6 +16,7 @@
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/roboto"
         android:text="@string/instruction_title"
+        android:textColor="@android:color/black"
         android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/go_to_shoe_list_btn"
@@ -31,6 +33,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/roboto"
+        android:textColor="@android:color/black"
         android:text="@string/to_create_a_shoe"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
