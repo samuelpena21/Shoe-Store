@@ -10,7 +10,11 @@
         android:id="@+id/loginFragment"
         android:name="com.udacity.shoestore.view.LoginFragment"
         android:label="@string/login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_createAccountFragment"
+            app:destination="@id/createAccountFragment" />
+    </fragment>
     <fragment
         android:id="@+id/welcomeFragment"
         android:name="com.udacity.shoestore.view.WelcomeFragment"
@@ -51,4 +55,9 @@
         android:name="com.udacity.shoestore.view.ShoeDetailFragment"
         android:label="@string/shoe_detail"
         tools:layout="@layout/fragment_shoe_detail" />
+    <fragment
+        android:id="@+id/createAccountFragment"
+        android:name="com.udacity.shoestore.view.CreateAccountFragment"
+        android:label="@string/create_user"
+        tools:layout="@layout/fragment_create_account"/>
 </navigation>

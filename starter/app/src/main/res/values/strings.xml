@@ -20,4 +20,9 @@
     <string name="shoe_detail">Shoe Detail</string>
     <string name="welcome">Welcome</string>
     <string name="log_out">Log out</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="repeat_password">Repeat password</string>
+    <string name="create_user">Create User</string>
 </resources>

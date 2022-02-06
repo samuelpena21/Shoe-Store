@@ -28,10 +28,10 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textSize="32sp"
         android:layout_marginTop="8dp"
+        android:text="@string/app_name"
         android:textColor="@color/raisingBlack"
+        android:textSize="32sp"
         app:layout_constraintBottom_toTopOf="@+id/email_tl"
         app:layout_constraintEnd_toEndOf="@+id/logo_iv"
         app:layout_constraintHorizontal_bias="0.5"
@@ -68,6 +68,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:hint="@string/password"
+        app:endIconMode="password_toggle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -81,6 +82,18 @@
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <TextView
+        android:id="@+id/create_account_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/don_t_have_an_account"
+        android:textColor="#0000EE"
+        app:layout_constraintEnd_toEndOf="@+id/password_tl"
+        app:layout_constraintTop_toBottomOf="@+id/password_tl" />
+
     <Button
         android:id="@+id/login_btn"
         android:layout_width="wrap_content"
@@ -89,6 +102,6 @@
         android:text="@string/login"
         app:layout_constraintEnd_toEndOf="@+id/password_tl"
         app:layout_constraintStart_toStartOf="@+id/password_tl"
-        app:layout_constraintTop_toBottomOf="@+id/password_tl" />
+        app:layout_constraintTop_toBottomOf="@+id/create_account_tv" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

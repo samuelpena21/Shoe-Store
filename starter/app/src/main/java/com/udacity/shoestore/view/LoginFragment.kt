@@ -34,10 +34,18 @@ class LoginFragment : Fragment() {
             viewModel.login(email = email, password = pass)
         }
 
+        binding.createAccountTv.setOnClickListener {
+            navigateToCreateAccountScreen()
+        }
+
         viewModel.loginSuccessEvent.observe(viewLifecycleOwner) { successEvent ->
             if (successEvent == true) {
                 findNavController().popBackStack()
             }
         }
+    }
+
+    private fun navigateToCreateAccountScreen() {
+        findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToCreateAccountFragment())
     }
 }
