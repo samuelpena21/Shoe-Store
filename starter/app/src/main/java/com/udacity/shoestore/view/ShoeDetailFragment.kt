@@ -40,6 +40,10 @@ class ShoeDetailFragment : Fragment() {
                 viewModel.addShoe(shoe)
             }
 
+            cancelBtn.setOnClickListener {
+                findNavController().popBackStack()
+            }
+
             viewModel.shoeAddedEvent.observe(viewLifecycleOwner) { isAdded ->
                 if (isAdded) {
                     findNavController().popBackStack()

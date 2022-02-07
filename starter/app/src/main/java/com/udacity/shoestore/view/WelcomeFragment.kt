@@ -15,8 +15,6 @@ class WelcomeFragment : Fragment() {
 
     lateinit var binding: FragmentWelcomeBinding
 
-    private val viewModel: UserViewModel by activityViewModels()
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -29,20 +27,10 @@ class WelcomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
             instructionsBtn.setOnClickListener { goToInstructionsScreen() }
-
-            viewModel.user.observe(viewLifecycleOwner) { user ->
-                if (user == null) {
-                    navigateToLoginScreen()
-                }
-            }
         }
     }
 
     private fun goToInstructionsScreen() {
         findNavController().navigate(WelcomeFragmentDirections.actionWelcomeFragmentToInstructionFragment())
-    }
-
-    private fun navigateToLoginScreen() {
-        findNavController().navigate(WelcomeFragmentDirections.actionWelcomeFragmentToLoginFragment())
     }
 }

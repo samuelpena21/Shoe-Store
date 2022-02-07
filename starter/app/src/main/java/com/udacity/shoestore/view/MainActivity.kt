@@ -2,6 +2,7 @@ package com.udacity.shoestore.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
@@ -25,9 +26,12 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph, binding.drawerLayout)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            if (destination.id == R.id.loginFragment) {
+            if (destination.id == R.id.loginFragment || destination.id == R.id.welcomeFragment) {
                 supportActionBar?.setDisplayHomeAsUpEnabled(false)
                 supportActionBar?.setHomeButtonEnabled(false)
+                binding.drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
+            } else {
+                binding.drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
             }
         }
     }

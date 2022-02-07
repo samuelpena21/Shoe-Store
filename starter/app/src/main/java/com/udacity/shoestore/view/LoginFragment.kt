@@ -40,12 +40,16 @@ class LoginFragment : Fragment() {
 
         viewModel.loginSuccessEvent.observe(viewLifecycleOwner) { successEvent ->
             if (successEvent == true) {
-                findNavController().popBackStack()
+                navigateToWelcomeScreen()
             }
         }
     }
 
     private fun navigateToCreateAccountScreen() {
         findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToCreateAccountFragment())
+    }
+
+    private fun navigateToWelcomeScreen() {
+        findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
     }
 }

@@ -48,10 +48,10 @@ class ShoeListFragment : Fragment() {
                 }
             }
 
-            userViewModel.logOutSuccessEvent.observe(viewLifecycleOwner) { logOutEvent ->
-//                if (logOutEvent) {
-//                    findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToWelcomeFragment())
-//                }
+            userViewModel.user.observe(viewLifecycleOwner) { user ->
+                if (user == null) {
+                    navigateToLoginScreen()
+                }
             }
         }
     }
@@ -72,8 +72,12 @@ class ShoeListFragment : Fragment() {
         findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment())
     }
 
+
+    private fun navigateToLoginScreen() {
+        findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToLoginFragment())
+    }
+
     private fun logOut() {
-        findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToWelcomeFragment())
         userViewModel.logOut()
     }
 }
