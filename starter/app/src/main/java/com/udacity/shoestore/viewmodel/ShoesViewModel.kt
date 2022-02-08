@@ -14,9 +14,14 @@ class ShoesViewModel : ViewModel() {
     private val _shoeList = MutableLiveData(mutableListOf<Shoe>())
     val shoeList: LiveData<MutableList<Shoe>> = _shoeList
 
+    private val _shoeCount = MutableLiveData(0)
+    val shoeCount: LiveData<Int>
+        get() = _shoeCount
+
     fun addShoe(shoe: Shoe) {
         _shoeList.value?.add(shoe)
         _shoeList.notifyObserver()
+        _shoeCount.value = _shoeList.value?.size ?: 0
         _shoeAddedEvent.value = true
         handleShoeEvent()
     }

@@ -13,8 +13,8 @@ import com.udacity.shoestore.viewmodel.UserViewModel
 
 class ShoeListFragment : Fragment() {
 
-    lateinit var binding: FragmentShoeListBinding
-    private val viewModel: ShoesViewModel by activityViewModels()
+    private lateinit var binding: FragmentShoeListBinding
+    private val shoesViewModel: ShoesViewModel by activityViewModels()
     private val userViewModel: UserViewModel by activityViewModels()
 
     override fun onCreateView(
@@ -33,8 +33,8 @@ class ShoeListFragment : Fragment() {
             addFab.setOnClickListener {
                 goToDetailsScreen()
             }
-
-            viewModel.shoeList.observe(viewLifecycleOwner) { shoeList ->
+            viewmodel = shoesViewModel
+            shoesViewModel.shoeList.observe(viewLifecycleOwner) { shoeList ->
                 shoeList.forEach { shoe ->
                     val shoeItemView =
                         ShoeItemBinding.inflate(layoutInflater, binding.container, false)
@@ -59,7 +59,7 @@ class ShoeListFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.drawer_menu, menu)
+        inflater.inflate(R.menu.log_out_menu, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

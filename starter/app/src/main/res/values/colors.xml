@@ -4,5 +4,8 @@
     <color name="sunGlowYellow">#FFCB47</color>
     <color name="chineseRed">#A3320B</color>
     <color name="aliceBlue">#E9F1F7</color>
+    <color name="iris">#5448C8</color>
+    <color name="aliceBlueDarker">#B3E9F1F7</color>
+    <color name="redCrayola">#FF1053</color>
     <color name="airSuperiorityBlue">#7798AB</color>
 </resources>

@@ -12,7 +12,6 @@ import com.udacity.shoestore.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var appBarConfiguration : AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,23 +20,13 @@ class MainActivity : AppCompatActivity() {
 
         val navController = findNavController(R.id.navHost)
 
-        NavigationUI.setupActionBarWithNavController(this, navController, binding.drawerLayout)
-        NavigationUI.setupWithNavController(binding.navView, navController)
-        appBarConfiguration = AppBarConfiguration(navController.graph, binding.drawerLayout)
+        NavigationUI.setupActionBarWithNavController(this, navController)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             if (destination.id == R.id.loginFragment || destination.id == R.id.welcomeFragment) {
                 supportActionBar?.setDisplayHomeAsUpEnabled(false)
                 supportActionBar?.setHomeButtonEnabled(false)
-                binding.drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
-            } else {
-                binding.drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
             }
         }
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.navHost)
-        return NavigationUI.navigateUp(navController, appBarConfiguration)
     }
 }

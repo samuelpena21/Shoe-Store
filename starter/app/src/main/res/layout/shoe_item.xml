@@ -1,42 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    android:id="@+id/container"
-    android:orientation="vertical">
+    android:background="@color/iris">
+
+    <ImageView
+        android:id="@+id/shoe_iv"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/sneaker_placeholder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/name_tv"
-        android:textSize="24sp"
-        android:textColor="@android:color/black"
-        android:fontFamily="@font/roboto"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto"
+        android:lines="1"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/size_tv"
+        app:layout_constraintStart_toEndOf="@+id/shoe_iv"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="Jordan 13" />
 
     <TextView
         android:id="@+id/company_tv"
-        android:textSize="18sp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:ellipsize="end"
+        android:lines="1"
         android:textColor="@color/airSuperiorityBlue"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/shoe_iv"
+        app:layout_constraintTop_toBottomOf="@+id/name_tv"
         tools:text="Jordan" />
 
     <TextView
         android:id="@+id/size_tv"
-        android:textAlignment="textEnd"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/chineseRed"
+        android:textAlignment="textEnd"
+        android:textColor="@android:color/white"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/name_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="Size" />
 
     <TextView
         android:id="@+id/description_tv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="8dp"
+        android:ellipsize="end"
+        android:lines="1"
         android:textColor="@color/airSuperiorityBlue"
+        app:layout_constraintBottom_toBottomOf="@id/color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/shoe_iv"
+        app:layout_constraintTop_toBottomOf="@+id/company_tv"
         tools:text="Description" />
 
-</LinearLayout>
+    <View
+        android:id="@+id/color"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/redCrayola" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
