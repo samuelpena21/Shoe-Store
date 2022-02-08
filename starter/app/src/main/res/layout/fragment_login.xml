@@ -13,7 +13,7 @@
         android:layout_width="160dp"
         android:layout_height="160dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/shoe"
+        android:src="@drawable/ic_flash"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
         app:shapeAppearanceOverlay="@style/roundedImageOverlay"
-        app:strokeColor="@color/sunGlowYellow"
+        app:strokeColor="@color/raisingBlack"
         app:strokeWidth="3dp" />
 
     <TextView

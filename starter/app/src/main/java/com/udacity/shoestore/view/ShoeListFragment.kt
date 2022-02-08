@@ -28,6 +28,7 @@ class ShoeListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setHasOptionsMenu(true)
+        userViewModel.validateIfUserIsLogged(requireContext())
         with(binding) {
             addFab.setOnClickListener {
                 goToDetailsScreen()
@@ -78,6 +79,6 @@ class ShoeListFragment : Fragment() {
     }
 
     private fun logOut() {
-        userViewModel.logOut()
+        userViewModel.logOut(requireContext())
     }
 }

@@ -25,4 +25,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="repeat_password">Repeat password</string>
     <string name="create_user">Create User</string>
+    <string name="login_error_text">Something went wrong :( Email does not exist or the password is incorrect</string>
 </resources>

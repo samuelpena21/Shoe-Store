@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
+import com.udacity.shoestore.SharePrefs
 import com.udacity.shoestore.databinding.FragmentCreateAccountBinding
+import com.udacity.shoestore.models.User
 
 class CreateAccountFragment : Fragment() {
 
@@ -26,6 +28,7 @@ class CreateAccountFragment : Fragment() {
         with(binding) {
             createUserBtn.setOnClickListener {
                 if (validatePassword()) {
+                    createUser()
                     showUserHasBeenCreatedMessage()
                     navigateBackToLogin()
                 } else {
@@ -40,6 +43,14 @@ class CreateAccountFragment : Fragment() {
         val repeatedPassword = binding.repeatPasswordEdit.text.toString()
 
         return password == repeatedPassword
+    }
+
+    private fun createUser() {
+        val email = binding.emailEdit.text.toString()
+        val password = binding.passwordEdit.text.toString()
+
+        val user = User(email, password)
+        SharePrefs.saveUser(user, requireContext())
     }
 
     private fun navigateBackToLogin() {
