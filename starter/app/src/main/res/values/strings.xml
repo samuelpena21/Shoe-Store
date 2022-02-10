@@ -27,4 +27,5 @@
     <string name="create_user">Create User</string>
     <string name="login_error_text">Something went wrong :( Email does not exist or the password is incorrect</string>
     <string name="number_of_shoes">Pairs available:</string>
+    <string name="error_message_complete_fields">Complete all the fields!</string>
 </resources>

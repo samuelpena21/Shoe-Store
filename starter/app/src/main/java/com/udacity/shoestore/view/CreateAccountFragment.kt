@@ -27,7 +27,7 @@ class CreateAccountFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
             createUserBtn.setOnClickListener {
-                if (validatePassword()) {
+                if (validatePassword() && isFormValid()) {
                     createUser()
                     showUserHasBeenCreatedMessage()
                     navigateBackToLogin()
@@ -44,6 +44,11 @@ class CreateAccountFragment : Fragment() {
 
         return password == repeatedPassword
     }
+
+    private fun isFormValid(): Boolean =
+        !binding.passwordEdit.text.isNullOrEmpty() ||
+                !binding.emailEdit.text.isNullOrEmpty() ||
+                !binding.repeatPasswordEdit.text.isNullOrEmpty()
 
     private fun createUser() {
         val email = binding.emailEdit.text.toString()
