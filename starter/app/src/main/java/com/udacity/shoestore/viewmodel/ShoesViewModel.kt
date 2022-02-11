@@ -18,12 +18,18 @@ class ShoesViewModel : ViewModel() {
     val shoeCount: LiveData<Int>
         get() = _shoeCount
 
-    fun addShoe(shoe: Shoe) {
-        _shoeList.value?.add(shoe)
-        _shoeList.notifyObserver()
-        _shoeCount.value = _shoeList.value?.size ?: 0
-        _shoeAddedEvent.value = true
-        handleShoeEvent()
+    private val _shoe = MutableLiveData<Shoe>(Shoe("", 0.0, "", ""))
+    val shoe: LiveData<Shoe>
+        get() = _shoe
+
+    fun addShoe(shoe: Shoe?) {
+        shoe?.let {
+            _shoeList.value?.add(it)
+            _shoeList.notifyObserver()
+            _shoeCount.value = _shoeList.value?.size ?: 0
+            _shoeAddedEvent.value = true
+            handleShoeEvent()
+        }
     }
 
     private fun handleShoeEvent() {
